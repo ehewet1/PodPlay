@@ -13,16 +13,16 @@ import com.raywenderlich.podplay.viewmodel.SearchViewModel
 class PodcastListAdapter (
     private var podcastSummaryViewList:List<SearchViewModel.PodcastSummaryViewData>,
     private val podcastListAdapterListener:PodcastListAdapterListener,
-    private val parentActivity: Activity
-    ): RecyclerView.Adapter<PodcastListAdapter.ViewHolder>(){
+    private val parentActivity: Activity):
+
+    RecyclerView.Adapter<PodcastListAdapter.ViewHolder>(){
 
     interface PodcastListAdapterListener{
         fun onShowDetails(podcastSummaryViewData: SearchViewModel.PodcastSummaryViewData)
     }
 
-    inner class ViewHolder(
-    databinding: SearchItemBinding,private val podcastListAdapterListener:
-    PodcastListAdapterListener
+    inner class ViewHolder(databinding: SearchItemBinding,
+                           private val podcastListAdapterListener:  PodcastListAdapterListener
     ):RecyclerView.ViewHolder(databinding.root){
         var podcastSummaryViewData:SearchViewModel.PodcastSummaryViewData?=null
         val nameTextView: TextView=databinding.podcastNameTextView
